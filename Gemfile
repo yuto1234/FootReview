@@ -62,3 +62,8 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'bullet'        # N+1問題を検出してくれる
 gem 'pry-rails'     # デバック用のGem
 gem 'haml-rails'    # irbをhamlにしてくれる
+
+# ユニコーンを本番環境で使用 
+group :production do
+  gem 'unicorn', '5.4.1'
+end
