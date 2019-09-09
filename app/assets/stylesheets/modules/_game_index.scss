@@ -1,0 +1,18 @@
+// アイキャッチ 
+.eye-catch {
+  background-image: image-url("eye-catch.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 300px;
+  &__shadow {
+    height: 300px;
+    background-color:rgba(0, 0, 0, 0.5);
+  }
+  &__text {
+    font-size: 50px;
+    color: white;
+    line-height: 300px;
+    text-align: center;
+    font-style: oblique;
+  }
+}
