@@ -2,3 +2,22 @@
 .eye-catch
   .eye-catch__shadow
     .eye-catch__text Let's sharing football review !
+
+-# 試合一覧
+.main
+  .main__wrapper
+    .main__wrapper__title Game List
+    .main__contents
+      = link_to "#" do
+        .main__content
+          .main__content__shadow
+            .main__content__home-image
+              = image_tag "http://tospa-flags.com/8811.gif"
+            .main__content__team-names
+              = "ホームチーム VS アウェイチーム"
+              %br/
+              = "3 - 0"
+              %br/
+              = "2019-09-09"
+            .main__content__away-image
+              = image_tag "http://tospa-flags.com/8811.gif"
