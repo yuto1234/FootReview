@@ -65,9 +65,11 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-gem 'bullet'        # N+1問題を検出してくれる
-gem 'pry-rails'     # デバック用のGem
-gem 'haml-rails'    # irbをhamlにしてくれる
+gem 'bullet'                       # N+1問題を検出してくれる
+gem 'pry-rails'                    # デバック用のGem
+gem 'haml-rails'                   # irbをhamlにしてくれる
+gem 'materialize-sass', '~> 1.0.0' # マテリアルデザイン導入
+gem 'material_icons'
 
 # ユニコーンを本番環境で使用 
 group :production do
