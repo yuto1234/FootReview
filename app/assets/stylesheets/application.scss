@@ -1,1 +1,9 @@
+@import "reset";
 @import 'materialize';
+@import "modules/*";
+
+// 全体のスタイル
+* {
+  font-family: serif;
+  box-sizing: border-box;
+}
