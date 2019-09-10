@@ -70,6 +70,7 @@ gem 'pry-rails'                    # デバック用のGem
 gem 'haml-rails'                   # irbをhamlにしてくれる
 gem 'materialize-sass', '~> 1.0.0' # マテリアルデザイン導入
 gem 'material_icons'
+gem 'devise'                       # ユーザー登録
 
 # ユニコーンを本番環境で使用 
 group :production do
