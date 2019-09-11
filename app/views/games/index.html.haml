@@ -23,5 +23,8 @@
               .main__content__away-image
                 = image_tag "#{game.away_team_img}"
 
+-# ページネーション
+= paginate(@games)
+
 -# フッター呼び出し
 = render 'shared/footer'
