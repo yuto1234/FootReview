@@ -8,19 +8,20 @@
   .main__wrapper
     .main__wrapper__title Game List
     .main__contents
-      = link_to "#" do
-        .main__content
-          .main__content__shadow
-            .main__content__home-image
-              = image_tag "http://tospa-flags.com/8811.gif"
-            .main__content__team-names
-              = "ホームチーム VS アウェイチーム"
-              %br/
-              = "3 - 0"
-              %br/
-              = "2019-09-09"
-            .main__content__away-image
-              = image_tag "http://tospa-flags.com/8811.gif"
+      - @games.each do |game|
+        = link_to "/games/#{game.id}" do
+          .main__content
+            .main__content__shadow
+              .main__content__home-image
+                = image_tag "#{game.home_team_img}"
+              .main__content__team-names
+                = "#{game.home_team_name} VS #{game.away_team_name}"
+                %br/
+                = "#{game.home_team_score} - #{game.away_team_score}"
+                %br/
+                = game.date
+              .main__content__away-image
+                = image_tag "#{game.away_team_img}"
 
 -# フッター呼び出し
 = render 'shared/footer'
