@@ -1,0 +1,27 @@
+.match-makeup-content {
+  height: 160px;
+  width: 80%;
+  margin: 0 auto;
+  background-image: image-url("match-makeup.jpg");
+  background-size: cover;
+  background-position: center;
+  border: 3px solid yellow;
+  &__shadow {
+    height: 154px;
+    background-color:rgba(0, 0, 0, 0.8);
+    display: flex;
+  }
+}
+
+.home-team-content, .away-team-content {
+  height: 150px;
+  width: 50%;
+  color: white;
+  text-align: center;
+  &__image {
+    padding-top: 5px;
+  }
+  &__score {
+    font-size: 40px;
+  }
+}

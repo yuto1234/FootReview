@@ -1,0 +1,20 @@
+-# スコアボード
+.match-makeup-content
+  .match-makeup-content__shadow
+    .home-team-content
+      .home-team-content__image
+        = image_tag "#{@game.home_team_img}"
+      .home-team-content__name
+        = @game.home_team_name
+      .home-team-content__score
+        = @game.home_team_score
+    .away-team-content
+      .away-team-content__image
+        = image_tag "#{@game.away_team_img}"
+      .away-team-content__name
+        = @game.away_team_name
+      .away-team-content__score
+        = @game.away_team_score
+
+-# フッター呼び出し
+= render 'shared/footer'
