@@ -76,6 +76,7 @@ gem 'materialize-sass', '~> 1.0.0' # マテリアルデザイン導入
 gem 'material_icons'
 gem 'devise'                       # ユーザー登録
 gem 'rails_admin', '~> 1.3'        # 管理者機能
+gem 'cancancan', '~> 2.0'          # 管理者権限を設定
 
 # ユニコーンを本番環境で使用 
 group :production do
