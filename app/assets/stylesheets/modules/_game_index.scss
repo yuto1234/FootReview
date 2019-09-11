@@ -63,3 +63,13 @@
 .main__content:hover {
   opacity: 0.8;
 }
+
+// ページネーション
+.pagination {
+  background-color: white;
+  box-shadow: none;
+  text-align: center;
+  & a, span {
+    color: #1a237e;
+  }
+}
