@@ -1,0 +1,2 @@
+class GameMember < ApplicationRecord
+end
