@@ -5,5 +5,6 @@ class GamesController < ApplicationController
 
   def show
     @game = Game.find(params[:id])
+    @game_members = GameMember.where(game_id: @game)
   end
 end
