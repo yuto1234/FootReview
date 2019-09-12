@@ -16,5 +16,78 @@
       .away-team-content__score
         = @game.away_team_score
 
+-# スタメン一覧
+.starting_member_table
+  %table{class: "striped"}
+    %thead
+      %tr
+        %th{colspan: "2"} Starting Member
+    - @game_members.each do |member|
+      - if member.home_away == "home" && member.in_time == nil
+        %tbody
+          %tr
+            %td{class: "position"}= member.position 
+            %td= member.name
+  %table{class: "striped"}
+    %thead
+      %tr
+        %th{colspan: "2"} 　
+    - @game_members.each do |member|
+      - if member.home_away == "away" && member.in_time == nil
+        %tbody
+          %tr
+            %td{class: "position"}= member.position 
+            %td= member.name
+
+-# 選手交代（IN)
+.change_in_member_table
+  %table{class: "striped"}
+    %thead
+      %tr
+        %th{colspan: "2"} Substitution of Players (IN)
+    - @game_members.each do |member|
+      - if member.home_away == "home" && member.in_time?
+        %tbody
+          %tr
+            %td.position= member.position 
+            %td= member.name
+            %td.time= "IN #{member.in_time} min"
+  %table{class: "striped"}
+    %thead
+      %tr
+        %th{colspan: "2"} 　
+    - @game_members.each do |member|
+      - if member.home_away == "away" && member.in_time?
+        %tbody
+          %tr
+            %td.position= member.position 
+            %td= member.name
+            %td.time= "IN #{member.in_time} min"
+
+-# 選手交代（OUT)
+.change_out_member_table
+  %table{class: "striped"}
+    %thead
+      %tr
+        %th{colspan: "2"} Substitution of Players (OUT)
+    - @game_members.each do |member|
+      - if member.home_away == "home" && member.out_time?
+        %tbody
+          %tr
+            %td.position= member.position 
+            %td= member.name
+            %td.time= "OUT #{member.out_time} min"
+  %table{class: "striped"}
+    %thead
+      %tr
+        %th{colspan: "2"} 　
+    - @game_members.each do |member|
+      - if member.home_away == "away" && member.out_time?
+        %tbody
+          %tr
+            %td.position= member.position 
+            %td= member.name
+            %td.time= "OUT #{member.out_time} min"
+
 -# フッター呼び出し
 = render 'shared/footer'
