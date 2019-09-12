@@ -10,7 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_11_104926) do
+ActiveRecord::Schema.define(version: 2019_09_12_110314) do
+
+  create_table "game_members", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "game_id"
+    t.string "name"
+    t.string "position"
+    t.integer "in_time"
+    t.integer "out_time"
+    t.string "home_away"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["game_id"], name: "index_game_members_on_game_id"
+  end
 
   create_table "games", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "home_team_name"
@@ -38,4 +50,5 @@ ActiveRecord::Schema.define(version: 2019_09_11_104926) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "game_members", "games"
 end
