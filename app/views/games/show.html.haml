@@ -89,5 +89,7 @@
             %td= member.name
             %td.time= "OUT #{member.out_time} min"
 
+= link_to "Review a Post", "/games/#{@game.id}/reviews/new", class:"waves-effect waves-light btn-large indigo darken-4 review_btn"
+
 -# フッター呼び出し
 = render 'shared/footer'
