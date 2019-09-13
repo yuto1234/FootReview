@@ -1,0 +1,18 @@
+.container
+  = form_for [@game, @review], url: game_reviews_path  do |f|
+    - if @review.errors.any?
+      %p There is an error in the entered information
+      %ul
+        - @review.errors.full_messages.each do |review|
+          %li= review
+    .rate-form
+      = f.label :"Rate", class: "label"
+      %br/
+      = f.number_field :rate, value: 1, min: 1, max: 10
+    .mom-form
+      = f.label :"Man of the match", class: "label"
+      = f.text_field :mom
+    .text-form
+      = f.label :"Text（you can use markdown notation）", class: "label"
+      = f.text_area :text
+    = f.submit "送信", class:"btn waves-effect waves-light #1a237e indigo darken-4"
