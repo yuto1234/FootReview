@@ -13,4 +13,8 @@ class AvatarUploader < CarrierWave::Uploader::Base
   # 200*200サイズで保存
   include CarrierWave::MiniMagick
   process resize_to_fit: [200, 200]
+
+  def default_url
+    "default.jpg"
+  end
 end
