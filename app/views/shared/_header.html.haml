@@ -8,6 +8,8 @@
         - if current_user.try(:admin?)
           %li
             = link_to "管理画面", "/admin"
+        %li
+          = image_tag "#{current_user.avatar}", class:"current-avatar-image"
       - else
         %li
           = link_to "新規登録", new_user_registration_path
