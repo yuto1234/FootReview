@@ -10,11 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 2019_09_12_122711) do
-=======
 ActiveRecord::Schema.define(version: 2019_09_14_111519) do
->>>>>>> 341fd8988b282d4aa377c7d19467dac364dc9c14
 
   create_table "game_members", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "game_id"
