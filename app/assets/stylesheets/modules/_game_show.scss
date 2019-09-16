@@ -1,6 +1,5 @@
 .match-makeup-content {
-  height: 160px;
-  width: 80%;
+  @include box(80%, 160px);
   margin: 0 auto;
   background-image: image-url("match-makeup.jpg");
   background-size: cover;
@@ -14,8 +13,7 @@
 }
 
 .home-team-content, .away-team-content {
-  height: 150px;
-  width: 50%;
+  @include box(50%, 150px);
   color: white;
   text-align: center;
   &__image {
@@ -31,7 +29,6 @@
   display: flex;
   width: 60vw;
   margin: 0 auto;
-  
 }
 
 .change_in_member_table, .change_out_member_table {
