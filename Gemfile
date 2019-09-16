@@ -80,6 +80,7 @@ gem 'cancancan', '~> 2.0'          # 管理者権限を設定
 gem 'kaminari'                     # ページネーション機能実装
 gem 'carrierwave', '~> 2.0'        # 画像アップロード
 gem 'mini_magick'                  # 画像リサイズ
+gem 'fog-aws'                      # 画像を外部ストレージに保存
 
 # ユニコーンを本番環境で使用 
 group :production do
