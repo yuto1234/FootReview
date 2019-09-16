@@ -10,7 +10,7 @@
   }
   &__text {
     font-size: 50px;
-    color: white;
+    color: $white;
     line-height: 300px;
     text-align: center;
     font-style: oblique;
@@ -49,7 +49,7 @@
     padding-top: 15px;
   }
   &__team-names {
-    color: white;
+    color: $white;
     font-size: 16px;
     width: 34%;
     line-height: 33px;
@@ -66,10 +66,10 @@
 
 // ページネーション
 .pagination {
-  background-color: white;
+  background-color: $white;
   box-shadow: none;
   text-align: center;
   & a, span {
-    color: #1a237e;
+    color: $indigo;
   }
 }
