@@ -31,7 +31,7 @@
   %table{class: "striped"}
     %thead
       %tr
-        %th{colspan: "2"} 　
+        %th{colspan: "2"}　
     - @game_members.each do |member|
       - if member.home_away == "away" && member.in_time == nil
         %tbody
@@ -55,7 +55,7 @@
   %table{class: "striped"}
     %thead
       %tr
-        %th{colspan: "2"} 　
+        %th{colspan: "2"}　
     - @game_members.each do |member|
       - if member.home_away == "away" && member.in_time?
         %tbody
@@ -80,7 +80,7 @@
   %table{class: "striped"}
     %thead
       %tr
-        %th{colspan: "2"} 　
+        %th{colspan: "2"}　
     - @game_members.each do |member|
       - if member.home_away == "away" && member.out_time?
         %tbody
@@ -89,7 +89,29 @@
             %td= member.name
             %td.time= "OUT #{member.out_time} min"
 
+-# レビュー投稿ボタン
 = link_to "Review a Post", "/games/#{@game.id}/reviews/new", class:"waves-effect waves-light btn-large indigo darken-4 review_btn"
+
+-# レビュー一覧
+.main
+  .main__wrapper
+    .main__wrapper__title Review List
+    .main__contents
+      - @reviews.each do |review|
+        .row
+          .col.s8.offset-s2
+            .card.white
+              .card-content.black-text
+                %span= image_tag review.user.avatar.to_s, class: "review_list_avatar"
+                .review_list_name= "#{review.user.name} review"
+              .card-action
+                = link_to 'show', "/games/#{@game.id}/reviews/#{review.id}"
+                - if user_signed_in? && current_user.id == review.user_id
+                  = link_to 'delete', "/games/#{@game.id}/reviews/#{review.id}", method: :delete, data: { confirm: "レビューを削除します。よろしいですか？"}
+                  = link_to 'edit', "/games/#{@game.id}/reviews/#{review.id}/edit"
+
+-# ページネーション呼び出し
+= paginate(@reviews)
 
 -# フッター呼び出し
 = render 'shared/footer'

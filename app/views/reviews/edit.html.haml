@@ -1,5 +1,5 @@
 .container
-  = form_for [@game, @review], url: game_reviews_path  do |f|
+  = form_with model: [@game, @review], local: true  do |f|
     - if @review.errors.any?
       %p There is an error in the entered information
       %ul
@@ -13,6 +13,8 @@
       = f.label :"Man of the match", class: "label"
       = f.text_field :mom
     .text-form
-      = f.label :"Text（you can use markdown notation）", class: "label"
+      = f.label :"Text", class: "label"
       = f.text_area :text
     = f.submit "送信", class:"btn waves-effect waves-light indigo darken-4"
+    
+= render 'shared/footer'
