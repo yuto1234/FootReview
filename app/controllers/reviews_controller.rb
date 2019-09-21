@@ -1,6 +1,7 @@
 class ReviewsController < ApplicationController
   before_action :authenticate_user!, only: :new # 未ログインユーザーをログイン画面に遷移
-  before_action :review_set, only: [:show, :destroy]
+  before_action :review_set, only: [:show, :destroy, :edit]
+  before_action :game_set, only: [:show, :edit]
 
   def show
     @game = Game.find(params[:game_id])
@@ -37,5 +38,9 @@ class ReviewsController < ApplicationController
 
   def review_set
     @review = Review.find(params[:id])
+  end
+
+  def game_set
+    @game = Game.find(params[:game_id])
   end
 end
