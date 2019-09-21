@@ -107,7 +107,7 @@
               .card-action
                 = link_to 'show', "/games/#{@game.id}/reviews/#{review.id}"
                 - if user_signed_in? && current_user.id == review.user_id
-                  = link_to 'delete', "/games/#{@game.id}/reviews/#{review.id}", method: :delete
+                  = link_to 'delete', "/games/#{@game.id}/reviews/#{review.id}", method: :delete, data: { confirm: "レビューを削除します。よろしいですか？"}
                   = link_to 'edit', "/games/#{@game.id}/reviews/#{review.id}/edit"
 
 -# ページネーション呼び出し
