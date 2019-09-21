@@ -55,3 +55,27 @@
   margin: 20px auto;
   width: 200px;
 }
+
+// レビューリスト
+.card-content {
+  display: flex;
+  height: 104px;
+}
+
+.review_list_avatar {
+  @include box(50px, 50px);
+  border-radius: 50%;
+  background-position: center;
+}
+
+.review_list_name {
+  line-height: 52px;
+  font-size: 30px;
+  padding-left: 20px;
+}
+
+@media(max-width:1000px){
+  .review_list_name {
+    font-size: 15px;
+  }
+}
