@@ -24,6 +24,11 @@ class ReviewsController < ApplicationController
   end
 
   def update
+    @review = Review.find(params[:id])
+    if @review.user_id == current_user.id
+      @review.update(review_params)
+      redirect_to game_path(@review.game_id), notice: "Edited review successfully."
+    end
   end
 
   def destroy
