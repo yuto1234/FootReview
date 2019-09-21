@@ -1,0 +1,15 @@
+.review-show
+  .review-show__header
+    .review-show__header__avatar
+      %span= image_tag @review.user.avatar.to_s, class: "show_avatar"
+    .review-show__header__name
+      = "#{@review.user.name} review"
+  .review-show__main
+    .review-show__main__rate
+      = "Rate : #{@review.rate}"
+    .review-show__main__mom
+      = "Mom of the Match : #{@review.mom}"
+    .review-show__main__review
+      Review
+    .review-show__main__text
+      = simple_format(@review.text)
