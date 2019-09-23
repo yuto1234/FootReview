@@ -5,7 +5,7 @@ class Scraping
 
     # link・title・imageを配列で取得
     urls   = current_page.search('.news-category-list__vertical a')
-    titles = current_page.search('.news-category-list__vertical__title')
+    titles = current_page.search('.news-category-list__vertical .news-category-list__vertical__title')
     images = current_page.search('.news-category-list__vertical__img img')
 
     # 一つずつ取り出して保存
