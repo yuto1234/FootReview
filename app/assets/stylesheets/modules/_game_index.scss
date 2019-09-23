@@ -20,13 +20,15 @@
 // 試合一覧
 .main {
   width: 100%;
+  display: flex;
   &__wrapper {
-    width: 60%;
-    margin: 0 auto;
+    width: 70vw;
     &__title{
       font-size: 50px;
+      width: 90%;
       text-align: center;
-      border-bottom: 1px ridge black;
+      margin: 0 auto;
+      border-bottom: 1px ridge $black;
     }
   }
 }
@@ -35,10 +37,10 @@
   background-image: image-url("match-list.jpg");
   background-size: cover;
   background-position: center;
-  height: 100px;
-  margin-bottom: 20px;
+  @include box(90%, 150px);
+  margin: 0 auto 20px;
   &__shadow {
-    height: 100px;
+    height: 150px;
     background-color:rgba(0, 0, 0, 0.8);
     margin-top: 20px;
     text-align: center;
@@ -46,22 +48,45 @@
   }
   &__home-image {
     width: 33%;
-    padding-top: 15px;
+    padding-top: 45px;
   }
   &__team-names {
     color: $white;
-    font-size: 16px;
+    font-size: 20px;
     width: 34%;
-    line-height: 33px;
+    line-height: 50px;
   }
   &__away-image {
     width: 33%;
-    padding-top: 15px;
+    padding-top: 45px;
   }
 }
 
 .main__content:hover {
   opacity: 0.8;
+}
+
+// ニュース一覧
+.side__wrapper {
+  width: 30vw;
+  &__title{
+    font-size: 50px;
+    width: 90%;
+    text-align: center;
+    margin-bottom: 20px;
+    border-bottom: 1px ridge $black;
+  }
+}
+
+.side__content {
+  height: 100px;
+  width: 90%;
+  display: flex;
+  margin-top: 5px;
+  &__image {
+    @include box(98px, 98px);
+    padding-right: 5px;
+  }
 }
 
 // ページネーション
