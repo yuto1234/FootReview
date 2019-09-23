@@ -3,8 +3,8 @@
   .eye-catch__shadow
     .eye-catch__text Let's sharing football review !
 
--# 試合一覧
 .main
+  -# 試合一覧
   .main__wrapper
     .main__wrapper__title Game List
     .main__contents
@@ -22,9 +22,17 @@
                 = game.date
               .main__content__away-image
                 = image_tag "#{game.away_team_img}"
+    = paginate(@games)
 
--# ページネーション
-= paginate(@games)
+  -# ニュース一覧
+  .side__wrapper
+    .side__wrapper__title News List
+    .side__contents
+      - @articles.each do |article|
+        = link_to "#{article.url}", target:"blank" do
+          .side__content
+            = image_tag "#{article.image}", class:"side__content__image"
+            = article.title
 
 -# フッター呼び出し
 = render 'shared/footer'
