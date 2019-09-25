@@ -93,10 +93,10 @@
 = link_to "Review a Post", "/games/#{@game.id}/reviews/new", class:"waves-effect waves-light btn-large indigo darken-4 review_btn"
 
 -# レビュー一覧
-.main
-  .main__wrapper
-    .main__wrapper__title Review List
-    .main__contents
+.show
+  .show__wrapper
+    .show__wrapper__title Review List
+    .show__contents
       - @reviews.each do |review|
         .row
           .col.s8.offset-s2

@@ -57,6 +57,21 @@
 }
 
 // レビューリスト
+.show {
+  width: 100%;
+  &__wrapper {
+    width: 70vw;
+    margin: 0 auto;
+    &__title{
+      font-size: 50px;
+      width: 90%;
+      text-align: center;
+      margin: 0 auto;
+      border-bottom: 1px ridge $black;
+    }
+  }
+}
+
 .card-content {
   display: flex;
   height: 104px;
