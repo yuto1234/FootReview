@@ -21,6 +21,9 @@ require 'capistrano3/unicorn'
 require "capistrano/scm/git"
 install_plugin Capistrano::SCM::Git
 
+# 自動スクレイピング
+require "whenever/capistrano"
+
 # Include tasks from other gems included in your Gemfile
 #
 # For documentation on these, see for example:

@@ -23,6 +23,9 @@ set :default_env, {
   path: "/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH",
 }
 
+# 自動スクレイピング
+set :whenever_identifier, ->{ "#{fetch(:application)}_#{fetch(:stage)}" }
+
 set :linked_files, %w{ config/master.key }
 
 after 'deploy:publishing', 'deploy:restart'
