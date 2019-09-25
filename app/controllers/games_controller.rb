@@ -1,7 +1,7 @@
 class GamesController < ApplicationController
   def index
     @games = Game.order(date: :desc).page(params[:page]).per(5)
-    @articles = Article.order(created_at: :desc).page(params[:page]).per(10)
+    @articles = Article.order(created_at: :desc).page(params[:page]).per(8)
   end
 
   def show
