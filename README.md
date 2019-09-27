@@ -1,24 +1,36 @@
-# README
+# 本アプリについて
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+公開先URL：http://52.198.83.48
 
-Things you may want to cover:
+### 本アプリの概要
+コンセプトは「サッカーの試合レビュー共有サイト」です。私はサッカーの試合観戦や情報収集が好きで、試合の感想などをサッカー好きと共有できたら楽しいなと考え、作成しました。
 
-* Ruby version
+## 機能一覧ならびに使用技術
+### フロントエンド
+- Haml/Sassでマークアップ
+- materialize-sassを使ってデザイン
 
-* System dependencies
+### サーバーサイド
+- Ruby/Ruby on Railsを使用
+- ユーザー登録機能（devise）
+- ユーザー画像登録機能（carrierwave）
+- 試合レビュー投稿機能
+- ページネーション機能（kaminari）
+- 管理者機能（rails_admin）
+- 自動スクレイピング機能（mechanize,whenever）
+- 単体テスト（RSpec）
+- 統合テスト
 
-* Configuration
+### インフラ
+- AWS EC2サーバー
+- Amazon S3にユーザー画像を保存
+- capistranoによる自動デプロイ設定
 
-* Database creation
+## 今後改善していきたい機能について
+### フロントエンド
+メディアクエリを使用してレスポンシブ化
+### サーバーサイド
+出場選手一人一人に評価を紐づける
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## 参考画像
+![スクリーンショット 2019-09-25 21 04 15-min](https://user-images.githubusercontent.com/52983810/65599252-69a71b80-dfd8-11e9-9871-d41bff9036f9.png)
