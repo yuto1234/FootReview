@@ -8,9 +8,12 @@ class ReviewsController < ApplicationController
 
   def new
     @review = Review.new
+    @game_members = GameMember.where(game_id: params[:game_id], home_away: 'home')
+    @review.player_reviews.build
   end
 
   def create
+    binding.pry
     @review = Review.new(review_params)
     if @review.save
       redirect_to game_path(@review.game_id), notice: 'Created review successfully.'
@@ -38,7 +41,7 @@ class ReviewsController < ApplicationController
 
   private
   def review_params
-    params.require(:review).permit(:rate, :mom, :text).merge(game_id: params[:game_id], user_id: current_user.id)
+    params.require(:review).permit(:rate, :mom, :text, player_reviews_attributes: [:text, :rate]).merge(game_id: params[:game_id], user_id: current_user.id)
   end
 
   def review_set
