@@ -5,12 +5,16 @@
     .review-show__header__name
       = "#{@review.user.name} review"
   .review-show__main
-    .review-show__main__rate
-      = "Rate : #{@review.rate}"
     .review-show__main__mom
       = "Mom of the Match : #{@review.mom}"
+    .review-show__main__mom
+      - @game_members.zip(@player_reviews) do |member, review|
+        .review-show__main__player-reviews
+          %p= member.name
+          %p= review.rate
+        %p= review.text
     .review-show__main__review
-      Review
+      General comment
     .review-show__main__text
       = simple_format(@review.text)
 

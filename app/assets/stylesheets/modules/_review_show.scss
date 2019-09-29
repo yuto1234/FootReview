@@ -19,14 +19,18 @@
     margin: 0 auto;
     background-color: $white;
     font-size: 25px;
-    &__rate {
-      margin-bottom: 20px;
-    }
     &__mom {
       margin-bottom: 20px;
     }
+    &__player-reviews {
+      display: flex;
+      padding-top:20px;
+      & p {
+        margin-right: 10px;
+      }
+    }
     &__review {
-      margin-bottom: 20px;
+      margin: 20px 0;
     }
     &__text {
       height: 350px;

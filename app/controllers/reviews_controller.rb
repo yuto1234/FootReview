@@ -4,6 +4,8 @@ class ReviewsController < ApplicationController
   before_action :game_set, only: [:show, :edit]
 
   def show
+    @game_members = GameMember.where(game_id: params[:game_id], home_away: 'home')
+    @player_reviews = PlayerReview.where(review_id: params[:id])
   end
 
   def new
