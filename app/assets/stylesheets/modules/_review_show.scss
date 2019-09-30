@@ -24,7 +24,7 @@
     }
     &__player-reviews {
       display: flex;
-      padding-top:20px;
+      padding-top:30px;
       & p {
         margin-right: 10px;
       }
@@ -37,6 +37,11 @@
       overflow: scroll;
       border: 1px solid gray;
     }
+  }
+  &__text {
+    padding-top: 5px;
+    font-size: 18px;
+    border-bottom: 1px dashed #EEEEEE;
   }
 }
 
