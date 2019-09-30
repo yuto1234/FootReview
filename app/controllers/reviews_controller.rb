@@ -1,13 +1,16 @@
 class ReviewsController < ApplicationController
-  before_action :authenticate_user!, only: :new # 未ログインユーザーをログイン画面に遷移
+  before_action :authenticate_user!, only: :new
   before_action :review_set, only: [:show, :destroy, :edit, :update]
   before_action :game_set, only: [:show, :edit]
+  before_action :game_members_set, only: [:show, :new, :create, :edit]
 
   def show
+    @player_reviews = PlayerReview.where(review_id: params[:id])
   end
 
   def new
     @review = Review.new
+    @review.player_reviews.build
   end
 
   def create
@@ -24,7 +27,7 @@ class ReviewsController < ApplicationController
 
   def update
     if @review.user_id == current_user.id
-      @review.update(review_params)
+      @review.update(review_update_params)
       redirect_to game_path(@review.game_id), notice: 'Edited review successfully.'
     else
       render action: :edit
@@ -38,7 +41,11 @@ class ReviewsController < ApplicationController
 
   private
   def review_params
-    params.require(:review).permit(:rate, :mom, :text).merge(game_id: params[:game_id], user_id: current_user.id)
+    params.require(:review).permit(:rate, :mom, :text, player_reviews_attributes: [:text, :rate]).merge(game_id: params[:game_id], user_id: current_user.id)
+  end
+
+  def review_update_params
+    params.require(:review).permit(:rate, :mom, :text, player_reviews_attributes: [:text, :rate, :id, :_destroy]).merge(game_id: params[:game_id], user_id: current_user.id)
   end
 
   def review_set
@@ -47,5 +54,9 @@ class ReviewsController < ApplicationController
 
   def game_set
     @game = Game.find(params[:game_id])
+  end
+
+  def game_members_set
+    @game_members = GameMember.where(game_id: params[:game_id], home_away: 'home')
   end
 end

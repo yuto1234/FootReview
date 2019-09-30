@@ -85,11 +85,4 @@ if Rails.env == "development"
     in_time: '46',
     home_away: 'away'
   )
-  Review.create!(
-    user_id: 1,
-    game_id: 1,
-    text: 'よかった',
-    mom: 'ホームの選手１',
-    rate: 10
-  )
 end

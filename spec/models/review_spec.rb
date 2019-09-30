@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe Review do
   describe '#create' do
-    it "text,mom,rateがあればreviewを保存できる" do
+    it "text,momがあればreviewを保存できる" do
       review = build(:review)
       expect(review).to be_valid
     end
@@ -17,12 +17,6 @@ describe Review do
       review = build(:review, mom: "")
       review.valid?
       expect(review.errors[:mom]).to include("can't be blank")
-    end
-
-    it "rateが空の場合登録できない" do
-      review = build(:review, rate: "")
-      review.valid?
-      expect(review.errors[:rate]).to include("can't be blank")
     end
   end
 end

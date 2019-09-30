@@ -27,10 +27,9 @@ feature 'review', type: :feature do
     # レビューページまで移動
     click_link "Review a Post"
     expect(current_path).to eq "/games/1/reviews/new"
-    expect(page).to have_content('Rate')
+    expect(page).to have_content('Man of the match')
     # レビューを投稿
     expect{
-    fill_in 'review[rate]', with: '10'
     fill_in 'review[mom]', with: 'プレイヤー１'
     fill_in 'review[text]', with: '最高だった'
     find('input[type="submit"]').click
