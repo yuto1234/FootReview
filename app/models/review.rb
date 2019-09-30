@@ -1,5 +1,5 @@
 class Review < ApplicationRecord
-  validates :text, :mom, :rate, presence: true
+  validates :text, :mom, presence: true
   
   belongs_to :user
   belongs_to :game
