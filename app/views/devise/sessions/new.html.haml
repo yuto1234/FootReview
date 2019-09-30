@@ -1,5 +1,5 @@
 .sign-content
-  %h2 Log in
+  %h2 Sign in
   = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
     .field
       = f.label :email
@@ -16,3 +16,6 @@
     .actions
       = f.submit "Log in", class:"waves-effect waves-light btn indigo darken-4 button"
   = render "devise/shared/links"
+  %p sample user
+  %p Email: admin@gmail.com
+  %p Pass : 123456
