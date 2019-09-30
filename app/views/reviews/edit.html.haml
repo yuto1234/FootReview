@@ -1,19 +1,33 @@
 .container
   = form_with model: [@game, @review], local: true  do |f|
+
+    -# エラー文を表示
     - if @review.errors.any?
       %p There is an error in the entered information
       %ul
         - @review.errors.full_messages.each do |review|
           %li= review
-    .rate-form
-      = f.label :"Rate", class: "label"
-      %br/
-      = f.number_field :rate, value: 1, min: 1, max: 10
+    
+    -# MOM入力フォーム
     .mom-form
       = f.label :"Man of the match", class: "label"
       = f.text_field :mom
+
+    -# 選手採点入力フォーム
+    .parent{style: "display: flex;"}
+      .child1{style: "width: 20vw;"}
+        - @game_members.each do |member|
+          %p{class: 'player-name'}= member.name
+      .child2{style: "width: 80vw;"}
+        = f.fields_for :player_reviews do |pr|
+          .player-review-form
+            = pr.number_field :rate, min: 1, max: 10, style:"width: 100px; margin-right: 20px;", placeholder: "Rate 1~10"
+            %br/
+            = pr.text_field :text, placeholder: "Review"
+
+    -# 総評入力フォーム
     .text-form
-      = f.label :"Text", class: "label"
+      = f.label :"General comment", class: "label"
       = f.text_area :text
     = f.submit "送信", class:"btn waves-effect waves-light indigo darken-4"
     
