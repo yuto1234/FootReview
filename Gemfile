@@ -83,6 +83,7 @@ gem 'mini_magick'                  # 画像リサイズ
 gem 'fog-aws'                      # 画像を外部ストレージに保存
 gem 'mechanize'                    # スクレイピング
 gem 'whenever', require: false     # 自動化
+gem "jquery-rails"                 # JQuery
 
 # ユニコーンを本番環境で使用 
 group :production do
