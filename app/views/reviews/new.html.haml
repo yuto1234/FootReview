@@ -11,7 +11,7 @@
     -# MOM入力フォーム
     .mom-form
       = f.label :"Man of the match", class: "label"
-      = f.text_field :mom, required: "required"
+      = f.collection_select :mom, @game_members, :name, :name, { prompt: "---" }, class:"mom-select", required: "required", style:"width: 200px;"
 
     -# 選手採点入力フォーム
     - @game_members.each do |member|
