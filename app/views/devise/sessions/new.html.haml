@@ -13,10 +13,5 @@
     - if devise_mapping.rememberable?
       .field
         = f.check_box :remember_me
-        = f.label :remember_me
     .actions
       = f.submit "Log in", class:"waves-effect waves-light btn indigo darken-4 button"
-  = render "devise/shared/links"
-  %p sample user
-  %p Email: admin@gmail.com
-  %p Pass : 123456
