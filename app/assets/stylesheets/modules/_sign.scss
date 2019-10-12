@@ -1,9 +1,9 @@
 .sign-content {
-  @include box(400px, 500px);
+  @include box(400px, 550px);
   margin: 10px auto;
   border-radius: 5px;
   border: 1px solid silver;
-  & h2 {
+  & h6 {
     text-align: center;
   }
 }
@@ -28,4 +28,8 @@
 
 .avatar_field {
   margin-bottom: 20px;
+}
+
+#error_explanation h2 {
+  font-size: 10px;
 }
