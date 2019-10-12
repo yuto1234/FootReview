@@ -2,9 +2,10 @@
   %h2 Sign in
   = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
     .field
-      = f.label :email
+      = f.label :name
+      %em
       %br/
-      = f.email_field :email, autofocus: true, autocomplete: "email"
+      = f.text_field :name, autofocus: true
     .field
       = f.label :password
       %br/
@@ -12,10 +13,5 @@
     - if devise_mapping.rememberable?
       .field
         = f.check_box :remember_me
-        = f.label :remember_me
     .actions
       = f.submit "Log in", class:"waves-effect waves-light btn indigo darken-4 button"
-  = render "devise/shared/links"
-  %p sample user
-  %p Email: admin@gmail.com
-  %p Pass : 123456

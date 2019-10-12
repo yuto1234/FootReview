@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe User do
   describe '#create' do
-    it "name,email,password,password_confirmationがあればUserを保存できる" do
+    it "name,password,password_confirmationがあればUserを保存できる" do
       user = build(:user)
       expect(user).to be_valid
     end
@@ -13,10 +13,11 @@ describe User do
       expect(user.errors[:name]).to include("can't be blank")
     end
 
-    it "emailカラムが空の場合登録できない" do
-      user = build(:user, email: "")
-      user.valid?
-      expect(user.errors[:email]).to include("can't be blank")
+    it "nameが重複していた場合登録できない" do
+      user = create(:user)
+      another_user = build(:user, name: user.name)
+      another_user.valid?
+      expect(another_user.errors[:name]).to include("has already been taken")
     end
 
     it "passwordが空の場合登録できない" do
@@ -29,13 +30,6 @@ describe User do
       user = build(:user, password_confirmation: "")
       user.valid?
       expect(user.errors[:password_confirmation]).to include("doesn't match Password")
-    end
-
-    it "emailが重複していた場合登録できない" do
-      user = create(:user)
-      another_user = build(:user, email: user.email)
-      another_user.valid?
-      expect(another_user.errors[:email]).to include("has already been taken")
     end
 
     it "パスワードが５文字以下だと登録できないこと" do
