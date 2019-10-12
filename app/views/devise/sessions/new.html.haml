@@ -1,5 +1,5 @@
 .sign-content
-  %h2 Sign in
+  %h6 Sign in
   = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
     .field
       = f.label :name
@@ -15,3 +15,9 @@
         = f.check_box :remember_me
     .actions
       = f.submit "Log in", class:"waves-effect waves-light btn indigo darken-4 button"
+  .or or
+  .testuser-login-form
+    = form_with(model: @user, url: user_session_path, local: true) do |test_f|
+      = test_f.hidden_field(:name, value: 'testuser')
+      = test_f.hidden_field(:password, value: '123456')
+      = test_f.submit("サンプルユーザーでログイン", data: { confirm: "【お願い】\nご覧になられた後は、必ずサインアウトするようお願い致します。" }, class: 'waves-effect waves-light btn indigo darken-4 button')

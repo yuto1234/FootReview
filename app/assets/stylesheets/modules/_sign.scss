@@ -1,15 +1,35 @@
 .sign-content {
-  width: 70vw;
-  margin: 0 auto;
+  @include box(400px, 550px);
+  margin: 10px auto;
+  border-radius: 5px;
+  border: 1px solid silver;
+  & h6 {
+    text-align: center;
+  }
+}
+
+.field {
+  width: 350px;
+  margin: 10px auto;
 }
 
 .button {
-  width: 300px;
+  width: 350px;
   & input {
     color: $white;
   }
+  display: block;
+  margin: 0 auto;
+}
+
+.or {
+  text-align: center;
 }
 
 .avatar_field {
   margin-bottom: 20px;
+}
+
+#error_explanation h2 {
+  font-size: 10px;
 }
