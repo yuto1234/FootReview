@@ -10,7 +10,6 @@ feature 'user', type: :feature do
     expect{
     visit new_user_registration_path
     fill_in 'user_name', with: 'テストユーザー'
-    fill_in 'user_email', with: 'test@test.com'
     fill_in 'user_password', with: '123456'
     fill_in 'user_password_confirmation', with: '123456'
     find('input[type="submit"]').click
@@ -25,7 +24,7 @@ feature 'user', type: :feature do
 
     # ログイン
     visit new_user_session_path
-    fill_in 'user_email', with: 'test@test.com'
+    fill_in 'user_name', with: 'テストユーザー'
     fill_in 'user_password', with: '123456'
     find('input[type="submit"]').click
     expect(current_path).to eq root_path
